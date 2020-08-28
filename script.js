@@ -2,11 +2,11 @@
 var age = 0;
 var height = 0;
 var weight = 0;
-
+var queryURL = "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight;
 var fitnessCal = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://fitness-calculator.p.rapidapi.com/bmi?age=25&height=180&weight=65",
+	"url": "https://fitness-calculator.p.rapidapi.com/bmi?age="+ age + "&height=" + height + "&weight="+ weight,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
