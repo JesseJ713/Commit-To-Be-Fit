@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 .wrapper{
@@ -15,7 +16,13 @@ height: 100vh;
 .form-flex{
   display: flex;
 }
+.main-content{
+  display: flex;
+  width: 90%;
+margin: auto;
+margin-top: 20px;
 
+}
 .dropdown-form{
   color: white;
   padding: 20px;
@@ -23,11 +30,13 @@ height: 100vh;
   border-radius: 25px;
   min-height: 200px;
   justify-items: center;
+  margin-right: 20px;
 }
 
 .navbar{
   height: 80px;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   background: rgba(0,0,0,0.4);
   text-align: center;
 }
