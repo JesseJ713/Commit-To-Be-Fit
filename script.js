@@ -16,7 +16,17 @@ var responseFitCal = $.ajax({
 		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
 		"x-rapidapi-key": "b469cb6cf6msh3da406e4c4c611dp13d77fjsnc9f693a4e222"
 	}
-})
+}).done(function (response) {
+	// console.log(response)
+	bmiCal(response);
+});
+
+// bmiCal ONLY calculates the BMI for the given Age, Height, Weight
+function bmiCal(bmiInfo) {
+
+	// Test Call for BMI Number
+	console.log("This is BMI Info from within AJAX promise ", bmiInfo.bmi);
+}
 
 // Recipe Search AJAX Call
 var recipeSearch = {
@@ -32,19 +42,17 @@ var recipeSearch = {
 // Recipe Search AJAX Function
 $.ajax(recipeSearch).done(function (response) {
 	console.log("Recipe Search response: ", response);
+	recipeSearchParser(response);
 });
 
-// lets just do the BMI for now
+	function recipeSearchParser(recipeSearchInfo) {
 
-// bmiCal ONLY calculates the BMI for the given Age, Height, Weight
-function bmiCal() {
-	// calling the url + age + height + weight
-	queryURLFitCal;
-	// response from api via variable
-	responseFitCal;
+		console.log(recipeSearchInfo.hits[0].recipe.label);
+		recipeParser(recipeSearchInfo.hits[1].recipe);
+	}
 
-	// console.log for the response from the API
-	console.log("called bmiCal this is response", responseFitCal)
-}
-bmiCal();
+	function recipeParser (recipe) {
+		console.log(recipe.label)
+	}
+
 
