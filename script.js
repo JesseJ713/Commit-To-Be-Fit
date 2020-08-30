@@ -16,17 +16,16 @@ var responseFitCal = $.ajax({
 		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
 		"x-rapidapi-key": "b469cb6cf6msh3da406e4c4c611dp13d77fjsnc9f693a4e222"
 	}
-})
+}).done(function (response) {
+	// console.log(response)
+	bmiCal(response);
+});
 
 // bmiCal ONLY calculates the BMI for the given Age, Height, Weight
-function bmiCal() {
-	// calling the url + age + height + weight
-	queryURLFitCal;
-	// response from api via variable
-	responseFitCal;
+function bmiCal(bmiInfo) {
 
-	// console.log for the response from the API
-	console.log("called bmiCal this is response", responseFitCal)
+	// Test Call for BMI Number
+	console.log("This is BMI Info from within AJAX promise ", bmiInfo.bmi);
 }
 
 // Recipe Search AJAX Call
@@ -47,5 +46,5 @@ $.ajax(recipeSearch).done(function (response) {
 
 // lets just do the BMI for now
 
-bmiCal();
+
 
