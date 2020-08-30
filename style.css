@@ -42,15 +42,7 @@ height: 100vh;
   border-radius: 25px;
 }
 
-.about{
-  background-color: ghostwhite;
-  color: black;
-  padding: 10px;
-  float: right;
-  margin-right: 5px;
-  border: 3px solid;
-  border-radius: 25px;
-}
+
 
 .title{
   color: white;
