@@ -21,26 +21,18 @@
             <a class="about" href="aboutpage.html">About</a>
 
         </nav>
+
+
         <div class="form-flex">
-            <form>
-                <div class="bmiForm">
-                    <h1>BMI Form</h1>
-                    <p>
-                        <label>Age </label>
-                        <input type="text" id="age" value="" />
-                    </p>
-                    <p>
-                        <label>Weight</label>
-                        <input type="text" id="weight" value="" />
-                    </p>
-                    <p>
-                        <label>Height</label>
-                        <input type="text" id="height" value="" />
-                    </p>
-
-
-                    <button class="submitBtn">Submit</button>
-                </div>
+            <form class="dropdown-form">
+                <label for="cars">What's your age?</label>
+                <select class="dropdown-age" name="age">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <br><br>
+                <input class="submitBtn" type="submit" value="Submit">
             </form>
         </div>
 
@@ -59,12 +51,26 @@
     <script type="text/javascript">
 
 
+        $(function () {
+            var ages = $("dropdown-age");
+            for (i = 1; i <= 100; i++) {
+                ages.append($('<option></option>').val(i).html(i))
+                console.log(ages)
+            }
+
+        });
 
 
-
-
-
-
+        // <form class="dropdown-form">
+        //     <label for="cars">What's your age?</label>
+        //     <select class="dropdown-age" name="age">
+        //         <option value="18">18</option>
+        //         <option value="19">19</option>
+        //         <option value="20">20</option>
+        //     </select>
+        //     <br><br>
+        //     <input type="submit" value="Submit">
+        // </form>
 
 
 
