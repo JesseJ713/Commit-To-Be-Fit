@@ -6,17 +6,19 @@
 }
 
 .wrapper{
-  background: url(https://lh3.googleusercontent.com/kDnA3aGqF57MaSvPXXFqxJB2EgRSuanA8pnmWvNvRvgaYLYa4kKHj1ViRp5VYpRWt5_gQRbqMYfU1ZODNkY4m6WCbxv7vkCVCzxoyMeaACktcuArVEMLuIZV8mW6w8EeVHpZWwVFklTuymrloGLZoDOsI3osvSMP4PdxoFvZ-Oba2_pZWvR4qRvgcY4MUskm4fkSx-9l4-GpYKnLrgVQMu3MzHS6rYQISjO51rAXtFjhiw6en33cMf-wPsquDr70BoFEeqko4m-Dr5kzTESucUYYfyAruiRO_yVWWrwYkkG88ROANg4LAMB_0G4o0IfEcia_4LO3nXs2bBKCQkli-dajev-axf5CFVHPT7xxPnEcVrumgqjNzSP12jbO7hFtYLcikQghQoupSk9OjUk-2Ue9_E8geJIv222zaOaoSN9UUdl1Nwyf_Xjqbb4Dtik-M7lYAej9Y-Pzq5RRMoCJoKARe60GmsVkmHfgkj_hT8sfksoqAt00CsTYX4A_AU8XDepyY0Hfg4303qrjofEVdpgI9X1j5bRYEcp_Zoh5LMAiI9-qpQKequ0uLD-SBeKTe23Y33lhCLuFvb9Kr4L7Gq1sqv7F65kiLfez59Yew55KGf5R_w6V4SKj8uLsOP1KPoq7AEFGXeS3GjDpneex-SKSskII81bWPXeIlmlfmHJY4g3vuUssW0Aba4_q=w1000-h563-no?authuser=0)
+  background: url(fitness\ background.jpg)
 no-repeat;
 background-size: cover;
 height: 100vh;
 }
+
 .form-flex{
   display: flex;
 }
-.bmiForm{
+
+.dropdown-form{
   color: white;
-  padding: 10px;
+  padding: 20px;
   border: 3px solid #333;
   border-radius: 25px;
   min-height: 200px;
@@ -27,6 +29,7 @@ height: 100vh;
   height: 80px;
   width: 100%;
   background: rgba(0,0,0,0.4);
+  text-align: center;
 }
 
 .home {
@@ -51,4 +54,22 @@ height: 100vh;
 
 .title{
   color: white;
+}
+
+.formoutput{
+  color: white;
+  padding: 10px;
+  border: 3px solid #333;
+  border-radius: 25px;
+  min-height: 200px;
+}
+
+.submitBtn{
+  background-color: dodgerblue;
+  color: white;
+  padding: 10px;
+  float: right;
+  margin-right: 5px;
+  border: 3px solid;
+  border-radius: 25px;
 }
