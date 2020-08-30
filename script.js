@@ -42,9 +42,17 @@ var recipeSearch = {
 // Recipe Search AJAX Function
 $.ajax(recipeSearch).done(function (response) {
 	console.log("Recipe Search response: ", response);
+	recipeSearchParser(response);
 });
 
-// lets just do the BMI for now
+	function recipeSearchParser(recipeSearchInfo) {
 
+		console.log(recipeSearchInfo.hits[0].recipe.label);
+		recipeParser(recipeSearchInfo.hits[1].recipe);
+	}
+
+	function recipeParser (recipe) {
+		console.log(recipe.label)
+	}
 
 
