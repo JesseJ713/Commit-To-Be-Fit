@@ -18,6 +18,17 @@ var responseFitCal = $.ajax({
 	}
 })
 
+// bmiCal ONLY calculates the BMI for the given Age, Height, Weight
+function bmiCal() {
+	// calling the url + age + height + weight
+	queryURLFitCal;
+	// response from api via variable
+	responseFitCal;
+
+	// console.log for the response from the API
+	console.log("called bmiCal this is response", responseFitCal)
+}
+
 // Recipe Search AJAX Call
 var recipeSearch = {
 	"async": true,
@@ -36,15 +47,5 @@ $.ajax(recipeSearch).done(function (response) {
 
 // lets just do the BMI for now
 
-// bmiCal ONLY calculates the BMI for the given Age, Height, Weight
-function bmiCal() {
-	// calling the url + age + height + weight
-	queryURLFitCal;
-	// response from api via variable
-	responseFitCal;
-
-	// console.log for the response from the API
-	console.log("called bmiCal this is response", responseFitCal)
-}
 bmiCal();
 
