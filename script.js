@@ -1,3 +1,4 @@
+$(document).ready(function () {
 // api key fitness cal b469cb6cf6msh3da406e4c4c611dp13d77fjsnc9f693a4e222
 var age = 25; // need to change to jquery input field
 var height = 180;
@@ -17,7 +18,7 @@ var responseFitCal = $.ajax({
 		"x-rapidapi-key": "b469cb6cf6msh3da406e4c4c611dp13d77fjsnc9f693a4e222"
 	}
 }).done(function (response) {
-	console.log(response)
+	// console.log(response)
 	bmiCal(response);
 });
 
@@ -41,21 +42,38 @@ var recipeSearch = {
 	}
 }
 // Recipe Search AJAX Function
-$.ajax(recipeSearch).done(function (response) {
-	console.log("Recipe Search response: ", response);
-	recipeSearchParser(response);
-});
+// $.ajax(recipeSearch).done(function (response) {
+// 	// console.log("Recipe Search response: ", response);
+// 	recipeSearchParser(response);
+// });
 
 	// Searches through recipes for info
 	function recipeSearchParser(recipeSearchInfo) {
 
-		console.log(recipeSearchInfo.hits[0].recipe.label);
+		// console.log(recipeSearchInfo.hits[0].recipe.label);
 		recipeParser(recipeSearchInfo.hits[1].recipe);
 	}
 
 	// Capable of returning info from different recipes
 	function recipeParser (recipe) {
-		console.log(recipe.label)
+		// console.log(recipe.label)
 	}
 
 
+
+// onclick button for BMI Form Submission
+	$("#bmiSubmit").on("click", function (e) {
+		e.preventDefault();
+		var ageInput = $(".dropdown-age").val();
+		var heightInput = $(".dropdown-height").val();
+		var weightInput = $(".dropdown-weight").val();
+		age = ageInput;
+		height = heightInput;
+		weight = weightInput;
+		console.log("button pressed:", ageInput, heightInput, weightInput)
+		console.log(age, height, weight);
+})
+
+
+
+})
