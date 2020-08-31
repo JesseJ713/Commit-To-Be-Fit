@@ -38,15 +38,36 @@ var recipeSearch = {
 // function for creating a dropdown menu with a list of ages with a corresponding value
 $("#dropdown").on("click", function() {
 createAgeList();
-}
-)
+});
 function createAgeList() {
 	for(i = 0; i < 100; i ++) {
 		select = "";
 		select += "<option value=" + i + ">" + i + "</option>";
 		$("#dropdown").append(select)
 	}
+};
+// function for the weight dropdown list
+$("#dropdown-weight").on("click", function() {
+	createWeightList();
+});
+function createWeightList() {
+	for(i = 5; i < 400; i=i+5){
+		select = "";
+		select += "<option value=" + i/2.2 + ">" + i + "lbs " + Math.floor(i/2.2) + "kg" + "</option>";
+		$("#dropdown-weight").append(select);
+	}
 }
+// function for the height dropdown list
+$("#dropdown-height").on("click", function() {
+	createHeightList();
+});
+function createHeightList() {
+	for(i = 1; i < 250; i=i+2.5) {
+	select = "";
+	select += "<option value=" + i + ">" + i + "cm "+ "| " + Math.floor(0.0328084*i * 10)/10 + "feet" + "</option>";
+	$("#dropdown-height").append(select);
+	};
+};
 // Onclick button for BMI Form Submission
 	$("#bmiSubmit").on("click", function (e) {
 		e.preventDefault();
@@ -54,7 +75,7 @@ function createAgeList() {
 		var height = $(".dropdown-height").val();
 		var weight = $(".dropdown-weight").val();
 		// Function for converting the paramters variables from imperial to metric
-		convertToMetric();
+		
 		
 
 		// Fit Cal Response
@@ -69,7 +90,6 @@ function createAgeList() {
 			}
 		};
 			$.ajax(responseFitCal).done(function (response) {
-			console.log("BMI Search response: ", response);
 		// setting bmi variable
 		var bmi = response.bmi;
 		bmi = Math.floor(bmi);
@@ -84,9 +104,6 @@ function createAgeList() {
 });
 });
 // function for converting imperial measurements to metric
-function convertToMetric(height) {
-		height = Math.floor() * 30;
-}
 	// Onclick function for Recipe Form Submission
 	// $("#recipeSubmit").on("click", function (e) {
 	// 	e.preventDefault();
