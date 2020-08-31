@@ -42,10 +42,10 @@ var recipeSearch = {
 	}
 }
 // Recipe Search AJAX Function
-// $.ajax(recipeSearch).done(function (response) {
-// 	// console.log("Recipe Search response: ", response);
-// 	recipeSearchParser(response);
-// });
+	$.ajax(recipeSearch).done(function (response) {
+	console.log("Recipe Search response: ", response);
+	recipeSearchParser(response);
+});
 
 	// Searches through recipes for info
 	function recipeSearchParser(recipeSearchInfo) {
