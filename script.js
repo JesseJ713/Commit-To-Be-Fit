@@ -35,9 +35,18 @@ var recipeSearch = {
 	function recipeParser (recipe) {
 		// console.log(recipe.label)
 	}
-
-
-
+// function for creating a dropdown menu with a list of ages with a corresponding value
+$("#dropdown").on("click", function() {
+createAgeList();
+}
+)
+function createAgeList() {
+	for(i = 0; i < 100; i ++) {
+		select = "";
+		select += "<option value=" + i + ">" + i + "</option>";
+		$("#dropdown").append(select)
+	}
+}
 // Onclick button for BMI Form Submission
 	$("#bmiSubmit").on("click", function (e) {
 		e.preventDefault();
