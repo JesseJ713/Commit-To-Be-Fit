@@ -74,6 +74,11 @@ var recipeSearch = {
 		console.log(age, height, weight);
 })
 
-
+	// Onclick function for Recipe Form Submission
+	$("#recipeSubmit").on("click", function (e) {
+		e.preventDefault();
+		var recipeInput = $(".dropdown-recipe").val();
+		console.log(recipeInput);
+	})
 
 })
