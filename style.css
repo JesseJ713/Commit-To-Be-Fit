@@ -19,8 +19,8 @@ height: 100vh;
 .main-content{
   display: flex;
   width: 90%;
-margin: auto;
-margin-top: 20px;
+  margin: auto;
+  margin-top: 20px;
 
 }
 .dropdown-form{
@@ -37,7 +37,7 @@ margin-top: 20px;
   height: 80px;
   width: 90%;
   margin: auto;
-  background: rgba(0,0,0,0.4);
+ 
   text-align: center;
 }
 
@@ -54,7 +54,7 @@ margin-top: 20px;
 
 
 .title{
-  color: white;
+  color: dodgerblue;
 }
 
 .formoutput{
