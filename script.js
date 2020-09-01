@@ -78,16 +78,10 @@ function createHeightList() {
 });
 	// Onclick function for Recipe Form Submission
 	//***remember to change this button fx to the correct selector*** */
-	$("#bmiSubmit").on("click", function (e) {
+	$("#recipeSubmit").on("click", function (e) {
 		e.preventDefault();
-		recipeInput = "chicken";
-		// // variable for showing URL
-			// var recipeURL = response.hits[i].recipe.url;
-			// // variable for showing recipe label
-			// var recipeName = response.hits[i].recipe.label;
-			// // variable for showing img
-			// var recipeImg = response.hits[i].recipe.image;
-			// // variable for showing ingredients** just text for now but can show img for each
+		recipeInput = $("#dropdown-recipe").val();
+		console.log(recipeInput);
 		var queryURLRecipe = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + recipeInput;
 		var recipeSearch = {
 			"async": true,
@@ -101,30 +95,49 @@ function createHeightList() {
 		}
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
-			var recipeInput = $(".dropdown-recipe").val();
+						// variable for showing URL
+						var recipeURL = response.hits[0].recipe.url;
+						// // variable for showing recipe label
+						var recipeName = response.hits[0].recipe.label;
+						// // variable for showing img
+						var recipeSearchImg = response.hits[0].recipe.image;
+						// // variable for showing ingredients** just text for now but can show img for each	
+						// var recipeDisplayAnchor = $("<a>").attr("href", recipeURL).attr("target=_blank");
+						var recipeDisplayImage = $("<img>").attr("src", recipeSearchImg);
+						// var finalDisplayImage = recipeDisplayAnchor.append(recipeDisplayImage);
+
+						// var recipeDisplayAnchor = $("<a href='recipeUrl'><img='recipeSearchImg'/></a>")
+			
+			
 		
-		for (i = 0; i < response.hits.length; i++){
-			var recipeName = response.hits[i].recipe.label;
-			// console.log(recipeName)
-			$(".recipeNameList").append(recipeName)
-		}
-// maybe onclick function for a selected recipe that brings up the ingredients 
-		for (i=0; i < response.hits.length; i++){
+			$(".foodResponse").append("This is the recipe Input: " + recipeInput);
+			$(".foodResponse").append("This is the recipe URL: " + recipeURL);
+			$(".foodResponse").append("This is the recipe Label: " + recipeName);
+			$(".foodResponse").append(recipeDisplayImage);
+		});
 			
-			var recipeIngredients = response.hits[i].recipe.ingredients
+		// for (i = 0; i < response.hits.length; i++){
+		// 	var recipeName = response.hits[i].recipe.label;
+		// 	// console.log(recipeName)
+		// 	$(".recipeNameList").append(recipeName)
+		// }
+		// // maybe onclick function for a selected recipe that brings up the ingredients 
+		// for (i=0; i < response.hits.length; i++){
 			
-			console.log(recipeIngredient)
-			// for loop to append recipe titles
+		// 	var recipeIngredients = response.hits[i].recipe.ingredients
+			
+		// 	// console.log(recipeIngredient)
+		// 	// for loop to append recipe titles
 			
 
-			// for loop to append recipe ingredients
+		// 	// for loop to append recipe ingredients
 		
-			// $(".recipe").text("Found Recipe For " + recipeName)
-			// $(".recipe-description").text("Recipe Description" + )
+		// 	// $(".recipe").text("Found Recipe For " + recipeName)
+		// 	// $(".recipe-description").text("Recipe Description" + )
 		
 			
-		}
+		// }
 		
-		});
+	
 });
 })
