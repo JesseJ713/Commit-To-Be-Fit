@@ -1,16 +1,15 @@
 $(document).ready(function () {
+	// // Searches through recipes for info
+	// function recipeSearchParser(recipeSearchInfo) {
 
-	// Searches through recipes for info
-	function recipeSearchParser(recipeSearchInfo) {
+	// 	// console.log(recipeSearchInfo.hits[0].recipe.label);
+	// 	recipeParser(recipeSearchInfo.hits[1].recipe);
+	// }
 
-		// console.log(recipeSearchInfo.hits[0].recipe.label);
-		recipeParser(recipeSearchInfo.hits[1].recipe);
-	}
-
-	// Capable of returning info from different recipes
-	function recipeParser (recipe) {
-		// console.log(recipe.label)
-	}
+	// // Capable of returning info from different recipes
+	// function recipeParser (recipe) {
+	// 	// console.log(recipe.label)
+	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
 $("#dropdown").on("click", function() {
 createAgeList();
@@ -20,8 +19,7 @@ function createAgeList() {
 		select = "";
 		select += "<option value=" + i + ">" + i + "</option>";
 		$("#dropdown").append(select)
-	}
-};
+}};
 // function for the weight dropdown list
 $("#dropdown-weight").on("click", function() {
 	createWeightList();
@@ -74,14 +72,11 @@ function createHeightList() {
 		$(".health").text("BMI Description: " + bmiDescription);
 		$(".range").text("Healthy BMI Range: " + bmiRange);	
 });
-
 });
 	// Onclick function for Recipe Form Submission
-	//***remember to change this button fx to the correct selector*** */
 	$("#recipeSubmit").on("click", function (e) {
 		e.preventDefault();
 		recipeInput = $("#dropdown-recipe").val();
-		console.log(recipeInput);
 		var queryURLRecipe = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + recipeInput;
 		var recipeSearch = {
 			"async": true,
@@ -95,45 +90,39 @@ function createHeightList() {
 		}
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
-			$(".foodTitle").text(recipeName)
+			// variable for making the recipe random
+			let randomHit = response.hits[Math.floor(Math.random() * response.hits.length)];
 			// variable for showing URL
-			var recipeURL = response.hits[0].recipe.url;
-			// // variable for showing recipe label
-			var recipeName = response.hits[0].recipe.label;
-			// // variable for showing img
-			var recipeSearchImg = response.hits[0].recipe.image;
-			// // variable for showing ingredients** just text for now but can show img for each	
-			var recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
-			$(".foodTitle").text(recipeName)
-			$(".foodTitle").text(recipeName);
-			$(".desc").text("URL: " + recipeURL);
-			$(".anchor").prop("href", recipeURL)
+			let recipeURL = randomHit.recipe.url;
+			//variable for showing recipe label
+			let recipeName = randomHit.recipe.label;
+			// variable for showing img
+			let recipeSearchImg = randomHit.recipe.image;
+			// variable for showing ingredients** just text for now but can show img for each
+			let recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
+			// variable for Health Label Array
+			let healthLabel = [];
+			// array for list of ingredients
+			let ingredients = [];
+			// variable for adding paragraph with text under img
+			let imgClick = $("<p>").text("Click the Image to view the recipe website!").addClass("clickImg");
+			$(".anchor").prop("href", recipeURL);
 			$("#imgSrc").append(recipeDisplayImage);
-			console.log(recipeURL);
+			$(".foodTitle").text(recipeName).append(imgClick);
+			// for loop to add ingredients to array
+			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
+				const list = randomHit.recipe.ingredientLines[j];
+				ingredients.push(list);
+			}
+			$(".desc").append("<ul><li>" + ingredients.join("</li><li>"));
+			$(".underPic").append("These are the ingredients you'll need: " );
+			// for loop for store/listing health labels
+			for (i = 0; i < randomHit.recipe.healthLabels.length; i++){
+				const list = randomHit.recipe.healthLabels[i];
+				healthLabel.push(list);
+			}
+			$(".healthText").text("Health Labels: ");
+			$(".healthDesc").append("<ul><li>" + healthLabel.join("</li><li>"));
 		});
-			
-		// for (i = 0; i < response.hits.length; i++){
-		// 	var recipeName = response.hits[i].recipe.label;
-		// 	// console.log(recipeName)
-		// 	$(".recipeNameList").append(recipeName)
-		// }
-		// // maybe onclick function for a selected recipe that brings up the ingredients 
-		// for (i=0; i < response.hits.length; i++){
-			
-		// 	var recipeIngredients = response.hits[i].recipe.ingredients
-			
-		// 	// console.log(recipeIngredient)
-		// 	// for loop to append recipe titles
-			
-
-		// 	// for loop to append recipe ingredients
-		
-		// 	// $(".recipe").text("Found Recipe For " + recipeName)
-		// 	// $(".recipe-description").text("Recipe Description" + )
-		
-			
-		// }
-		
-	
 });
 })
