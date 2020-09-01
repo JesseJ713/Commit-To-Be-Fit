@@ -95,25 +95,21 @@ function createHeightList() {
 		}
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
-						// variable for showing URL
-						var recipeURL = response.hits[0].recipe.url;
-						// // variable for showing recipe label
-						var recipeName = response.hits[0].recipe.label;
-						// // variable for showing img
-						var recipeSearchImg = response.hits[0].recipe.image;
-						// // variable for showing ingredients** just text for now but can show img for each	
-						// var recipeDisplayAnchor = $("<a>").attr("href", recipeURL).attr("target=_blank");
-						var recipeDisplayImage = $("<img>").attr("src", recipeSearchImg);
-						// var finalDisplayImage = recipeDisplayAnchor.append(recipeDisplayImage);
-
-						// var recipeDisplayAnchor = $("<a href='recipeUrl'><img='recipeSearchImg'/></a>")
-			
-			
-		
-			$(".foodResponse").append("This is the recipe Input: " + recipeInput);
-			$(".foodResponse").append("This is the recipe URL: " + recipeURL);
-			$(".foodResponse").append("This is the recipe Label: " + recipeName);
-			$(".foodResponse").append(recipeDisplayImage);
+			$(".foodTitle").text(recipeName)
+			// variable for showing URL
+			var recipeURL = response.hits[0].recipe.url;
+			// // variable for showing recipe label
+			var recipeName = response.hits[0].recipe.label;
+			// // variable for showing img
+			var recipeSearchImg = response.hits[0].recipe.image;
+			// // variable for showing ingredients** just text for now but can show img for each	
+			var recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
+			$(".foodTitle").text(recipeName)
+			$(".foodTitle").text(recipeName);
+			$(".desc").text("URL: " + recipeURL);
+			$(".anchor").prop("href", recipeURL)
+			$("#imgSrc").append(recipeDisplayImage);
+			console.log(recipeURL);
 		});
 			
 		// for (i = 0; i < response.hits.length; i++){
