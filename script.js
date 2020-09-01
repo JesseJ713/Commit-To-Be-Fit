@@ -15,7 +15,7 @@ $("#dropdown").on("click", function() {
 createAgeList();
 });
 function createAgeList() {
-	for(i = 0; i < 100; i ++) {
+	for(i = 1; i < 100; i++) {
 		select = "";
 		select += "<option value=" + i + ">" + i + "</option>";
 		$("#dropdown").append(select)
