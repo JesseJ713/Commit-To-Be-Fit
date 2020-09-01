@@ -44,7 +44,9 @@ height: 100vh;
   margin-right: 20px;
 
 }
-
+.row{
+  display: flex;
+}
 .form3{
   color: white;
   padding: 20px;
@@ -52,6 +54,15 @@ height: 100vh;
   border-radius: 25px;
   min-height: 200px;
   margin-right: 20px;
+}
+.form4{
+  color: white;
+  padding: 20px;
+  border: 3px solid #333;
+  border-radius: 25px;
+  min-height: 200px;
+  margin-right: 20px;
+
 }
 .bmiTitle{
   text-align: center;
@@ -61,10 +72,6 @@ height: 100vh;
   text-align: center;
 }
 .navbar{
-  height: 80px;
-  width: 90%;
-  margin: auto;
- 
   text-align: center;
 }
 
