@@ -102,8 +102,14 @@ function createHeightList() {
 						// // variable for showing img
 						var recipeSearchImg = response.hits[0].recipe.image;
 						// // variable for showing ingredients** just text for now but can show img for each	
-						var recipeDisplayImage = $("<img>").attr("src", recipeSearchImg).attr("href", recipeURL);
+						// var recipeDisplayAnchor = $("<a>").attr("href", recipeURL).attr("target=_blank");
+						var recipeDisplayImage = $("<img>").attr("src", recipeSearchImg);
+						// var finalDisplayImage = recipeDisplayAnchor.append(recipeDisplayImage);
+
+						// var recipeDisplayAnchor = $("<a href='recipeUrl'><img='recipeSearchImg'/></a>")
 			
+			
+		
 			$(".foodResponse").append("This is the recipe Input: " + recipeInput);
 			$(".foodResponse").append("This is the recipe URL: " + recipeURL);
 			$(".foodResponse").append("This is the recipe Label: " + recipeName);
