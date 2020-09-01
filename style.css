@@ -10,7 +10,7 @@
   background: url(fitness\ background.jpg)
 no-repeat;
 background-size: cover;
-height: 100vh;
+height: 100%;
 }
 
 .form-flex{
@@ -41,7 +41,10 @@ height: 100vh;
   border: 3px solid #333;
   border-radius: 25px;
   min-height: 200px;
-  margin-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
+  justify-content: 25px;
 
 }
 .row{
@@ -91,7 +94,10 @@ height: 100vh;
   color: dodgerblue;
 }
 
-
+img{
+  display: block;
+  margin: auto;
+}
 
 .submitBtn{
   background-color: dodgerblue;
