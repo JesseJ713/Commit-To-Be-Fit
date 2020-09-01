@@ -98,7 +98,9 @@ img{
   display: block;
   margin: auto;
 }
-
+.clickMe{
+  font-size: 10px;
+}
 .submitBtn{
   background-color: dodgerblue;
   color: white;

@@ -1,16 +1,4 @@
 $(document).ready(function () {
-
-	// // Searches through recipes for info
-	// function recipeSearchParser(recipeSearchInfo) {
-
-	// 	// console.log(recipeSearchInfo.hits[0].recipe.label);
-	// 	recipeParser(recipeSearchInfo.hits[1].recipe);
-	// }
-
-	// // Capable of returning info from different recipes
-	// function recipeParser (recipe) {
-	// 	// console.log(recipe.label)
-	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
 $("#dropdown").on("click", function() {
 createAgeList();
@@ -20,8 +8,7 @@ function createAgeList() {
 		select = "";
 		select += "<option value=" + i + ">" + i + "</option>";
 		$("#dropdown").append(select)
-	}
-};
+}};
 // function for the weight dropdown list
 $("#dropdown-weight").on("click", function() {
 	createWeightList();
@@ -74,10 +61,8 @@ function createHeightList() {
 		$(".health").text("BMI Description: " + bmiDescription);
 		$(".range").text("Healthy BMI Range: " + bmiRange);	
 });
-
 });
 	// Onclick function for Recipe Form Submission
-	//***remember to change this button fx to the correct selector*** */
 	$("#recipeSubmit").on("click", function (e) {
 		e.preventDefault();
 		recipeInput = $("#dropdown-recipe").val();
@@ -95,36 +80,31 @@ function createHeightList() {
 		}
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
+			// variable for making the recipe random
+			let randomHit = response.hits[Math.floor(Math.random() * response.hits.length)]
 			// variable for showing URL
-			let recipeURL = response.hits[0].recipe.url;
-			// // variable for showing recipe label
-			let recipeName = response.hits[0].recipe.label;
-			// // variable for showing img
-			let recipeSearchImg = response.hits[0].recipe.image;
-			// // variable for showing ingredients** just text for now but can show img for each
-			
+			let recipeURL = randomHit.recipe.url;
+			//variable for showing recipe label
+			let recipeName = randomHit.recipe.label;
+			// variable for showing img
+			let recipeSearchImg = randomHit.recipe.image;
+			// variable for showing ingredients** just text for now but can show img for each
 			let recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
-		
-			$(".foodTitle").text(recipeName);
-			$(".anchor").prop("href", recipeURL)
+			// variable for adding paragraph with text under img
+			let imgClick = $("<p>").text("Click the Image to view the recipe website!").addClass("clickImg");
+			$(".anchor").prop("href", recipeURL);
 			$("#imgSrc").append(recipeDisplayImage);
-			$(".foodTitle").text(recipeName)
-
+			$(".foodTitle").text(recipeName).append(imgClick);
 			// array for list of ingredients
 			let ingredients = [];
-			// for loop to run through
-			
-			
-			for (j = 0; j < response.hits[0].recipe.ingredientLines.length; j++){
-				let list = response.hits[0].recipe.ingredientLines[j]
-				ingredients.push(list)
-				console.log(list," , ")
-				$(".desc").append(list + ",")
+			// for loop to add ingredients to array
+			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
+				let list = randomHit.recipe.ingredientLines[j];
+				ingredients.push(list);
 			}
-			$(".foodResponse").text("These are the ingredients you'll need: ")
-				
-			
-		
+			$(".desc").append(ingredients + " , ")
+			$(".underPic").append("These are the ingredients you'll need: " )
+			// maybe add a health label for possible allergies
 		});
 			
 	
