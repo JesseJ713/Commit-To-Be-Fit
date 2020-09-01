@@ -38,9 +38,9 @@ $("#dropdown-height").on("click", function() {
 	createHeightList();
 });
 function createHeightList() {
-	for(i = 1; i < 250; i=i+2.5) {
+	for(i = 5; i < 250; i=i+5) {
 	select = "";
-	select += "<option value=" + i + ">" + i + "cm "+ "| " + Math.floor(0.0328084*i * 10)/10 + "feet" + "</option>";
+	select += "<option value=" + i + ">" + i + " cm"+ "</option>";
 	$("#dropdown-height").append(select);
 	};
 };
