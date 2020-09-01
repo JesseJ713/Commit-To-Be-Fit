@@ -23,7 +23,7 @@ height: 100vh;
   margin-top: 20px;
 
 }
-.dropdown-form{
+.form1{
   color: white;
   padding: 20px;
   border: 3px solid #333;
@@ -33,6 +33,32 @@ height: 100vh;
   margin-right: 20px;
 }
 
+
+.form2{
+  color: white;
+  padding: 20px;
+  border: 3px solid #333;
+  border-radius: 25px;
+  min-height: 200px;
+  margin-right: 20px;
+
+}
+
+.form3{
+  color: white;
+  padding: 20px;
+  border: 3px solid #333;
+  border-radius: 25px;
+  min-height: 200px;
+  margin-right: 20px;
+}
+.bmiTitle{
+  text-align: center;
+  
+}
+.foodTitle{
+  text-align: center;
+}
 .navbar{
   height: 80px;
   width: 90%;
@@ -57,13 +83,7 @@ height: 100vh;
   color: dodgerblue;
 }
 
-.formoutput{
-  color: white;
-  padding: 10px;
-  border: 3px solid #333;
-  border-radius: 25px;
-  min-height: 200px;
-}
+
 
 .submitBtn{
   background-color: dodgerblue;
