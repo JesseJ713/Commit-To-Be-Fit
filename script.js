@@ -11,9 +11,7 @@ $(document).ready(function () {
 	// 	// console.log(recipe.label)
 	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
-// $("#dropdown").on("click", function() {
 createAgeList();
-// });
 function createAgeList() {
 	for(i = 1; i < 100; i++) {
 		select = "";
@@ -21,9 +19,7 @@ function createAgeList() {
 		$("#dropdown").append(select)
 }};
 // function for the weight dropdown list
-// $("#dropdown-weight").on("click", function() {
 	createWeightList();
-// });
 function createWeightList() {
 	for(i = 5; i < 400; i=i+5){
 		select = "";
@@ -32,9 +28,7 @@ function createWeightList() {
 	}
 }
 // function for the height dropdown list
-// $("#dropdown-height").on("click", function() {
 	createHeightList();
-// });
 function createHeightList() {
 	for(i = 5; i <= 250; i=i+5) {
 	select = "";
