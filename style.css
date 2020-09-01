@@ -101,6 +101,15 @@ img{
 .clickMe{
   font-size: 10px;
 }
+li{
+  text-align: left;
+  align-content: center;
+}
+ul{
+  display: table;
+  margin: 0px auto 0px auto;
+  align-content: center;
+}
 .submitBtn{
   background-color: dodgerblue;
   color: white;
