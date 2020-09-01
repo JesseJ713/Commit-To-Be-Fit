@@ -1,16 +1,16 @@
 $(document).ready(function () {
 
-	// Searches through recipes for info
-	function recipeSearchParser(recipeSearchInfo) {
+	// // Searches through recipes for info
+	// function recipeSearchParser(recipeSearchInfo) {
 
-		// console.log(recipeSearchInfo.hits[0].recipe.label);
-		recipeParser(recipeSearchInfo.hits[1].recipe);
-	}
+	// 	// console.log(recipeSearchInfo.hits[0].recipe.label);
+	// 	recipeParser(recipeSearchInfo.hits[1].recipe);
+	// }
 
-	// Capable of returning info from different recipes
-	function recipeParser (recipe) {
-		// console.log(recipe.label)
-	}
+	// // Capable of returning info from different recipes
+	// function recipeParser (recipe) {
+	// 	// console.log(recipe.label)
+	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
 $("#dropdown").on("click", function() {
 createAgeList();
@@ -95,44 +95,39 @@ function createHeightList() {
 		}
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
-			$(".foodTitle").text(recipeName)
 			// variable for showing URL
-			var recipeURL = response.hits[0].recipe.url;
+			let recipeURL = response.hits[0].recipe.url;
 			// // variable for showing recipe label
-			var recipeName = response.hits[0].recipe.label;
+			let recipeName = response.hits[0].recipe.label;
 			// // variable for showing img
-			var recipeSearchImg = response.hits[0].recipe.image;
-			// // variable for showing ingredients** just text for now but can show img for each	
-			var recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
-			$(".foodTitle").text(recipeName)
+			let recipeSearchImg = response.hits[0].recipe.image;
+			// // variable for showing ingredients** just text for now but can show img for each
+			
+			let recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
+		
 			$(".foodTitle").text(recipeName);
-			$(".desc").text("URL: " + recipeURL);
 			$(".anchor").prop("href", recipeURL)
 			$("#imgSrc").append(recipeDisplayImage);
-			console.log(recipeURL);
+			$(".foodTitle").text(recipeName)
+
+			// array for list of ingredients
+			let ingredients = [];
+			// for loop to run through
+			
+			
+			for (j = 0; j < response.hits[0].recipe.ingredientLines.length; j++){
+				let list = response.hits[0].recipe.ingredientLines[j]
+				ingredients.push(list)
+				console.log(list," , ")
+				$(".desc").append(list + ",")
+			}
+			$(".foodResponse").text("These are the ingredients you'll need: ")
+				
+			
+		
 		});
 			
-		// for (i = 0; i < response.hits.length; i++){
-		// 	var recipeName = response.hits[i].recipe.label;
-		// 	// console.log(recipeName)
-		// 	$(".recipeNameList").append(recipeName)
-		// }
-		// // maybe onclick function for a selected recipe that brings up the ingredients 
-		// for (i=0; i < response.hits.length; i++){
-			
-		// 	var recipeIngredients = response.hits[i].recipe.ingredients
-			
-		// 	// console.log(recipeIngredient)
-		// 	// for loop to append recipe titles
-			
-
-		// 	// for loop to append recipe ingredients
-		
-		// 	// $(".recipe").text("Found Recipe For " + recipeName)
-		// 	// $(".recipe-description").text("Recipe Description" + )
-		
-			
-		// }
+	
 		
 	
 });
