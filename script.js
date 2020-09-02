@@ -1,15 +1,4 @@
 $(document).ready(function () {
-	// // Searches through recipes for info
-	// function recipeSearchParser(recipeSearchInfo) {
-
-	// 	// console.log(recipeSearchInfo.hits[0].recipe.label);
-	// 	recipeParser(recipeSearchInfo.hits[1].recipe);
-	// }
-
-	// // Capable of returning info from different recipes
-	// function recipeParser (recipe) {
-	// 	// console.log(recipe.label)
-	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
 createAgeList();
 function createAgeList() {
@@ -19,7 +8,7 @@ function createAgeList() {
 		$("#dropdown").append(select)
 }};
 // function for the weight dropdown list
-	createWeightList();
+createWeightList();
 function createWeightList() {
 	for(i = 5; i < 400; i=i+5){
 		select = "";
@@ -28,7 +17,7 @@ function createWeightList() {
 	}
 }
 // function for the height dropdown list
-	createHeightList();
+createHeightList();
 function createHeightList() {
 	for(i = 5; i <= 250; i=i+5) {
 	select = "";
@@ -96,7 +85,8 @@ function createHeightList() {
 			let healthText = $("<p id='healthText'>");
 			let healthDesc = $("<p id='healthDesc'>");
 			let anchor = $("#anchor").prop("href", recipeURL);
-
+			
+			
 			$("#anchor").html(anchor)
 			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
