@@ -51,10 +51,10 @@ function createHeightList() {
 			var bmiDescription = response.health;
 			// setting healthy bmi range
 			var bmiRange = response.healthy_bmi_range;
-			let resultsH1 = $("<p id='bmiTitle'>Your Results:</p>")
-			let bmiResults = $("<p id='BMI'>Your BMI: " + bmi + "</p>")
-			let bmiD = $("<p id='health'>BMI Description: " + bmiDescription +  "</p>")
-			let bmiRange1 = $("<p id='range'>Healthy BMI Range: " + bmiRange + "</p>")
+			let resultsH1 = $("<h3 id='bmiTitle'>Your Results:</h3>")
+			let bmiResults = $("<h3 id='BMI'>Your BMI: " + bmi + "</h3>")
+			let bmiD = $("<h3 id='health'>BMI Description: " + bmiDescription +  "</h3>")
+			let bmiRange1 = $("<h3 id='range'>Healthy BMI Range: " + bmiRange + "</h3>")
 			// appending variables to the div
 			$("#bmiTitle").html(resultsH1)
 			$("#BMI").html(bmiResults);	
@@ -95,9 +95,9 @@ function createHeightList() {
 			let ingredients = [];
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
 			let h1 = $("<h1 id='underPic'>");
-			let p = $("<p id='desc'>");
-			let healthText = $("<p id='healthText'>");
-			let healthDesc = $("<p id='healthDesc'>");
+			let p = $("<h3 id='desc'>");
+			let healthText = $("<h3 id='healthText'>");
+			let healthDesc = $("<h3 id='healthDesc'>");
 			let anchor = $("#anchor").prop("href", recipeURL);
 			
 			
