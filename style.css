@@ -31,41 +31,56 @@ height: 100%;
 }
 
 .form1{
-  color: white;
+  color: whitesmoke;
+  font-weight: bold;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 25px;
   min-height: 200px;
   justify-items: center;
   margin-right: 20px;
+  margin-left: 23.5%;
+  margin-top: 2%;
+  background-color: rgba(0,0,0, 0.5);
 }
 
 
 .form2{
-  color: white;
+  color: whitesmoke;
+  background-color: rgba(0,0,0, 0.5);
+  font-weight: bold;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 25px;
   min-height: 200px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: auto;
+  margin-top: 2%;
   justify-content: 25px;
 
 }
 .row{
   display: flex;
 }
+
+.BMI{
+  margin-top: 10%;
+}
 .form3{
-  color: white;
+  color: whitesmoke;
+  background-color: rgba(0,0,0, 0.5);
+  font-weight: bold;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 25px;
   min-height: 200px;
   margin-right: 20px;
+  margin-top: 2%;
 }
 .form4{
-  color: white;
+  color: whitesmoke;
+  background-color: rgba(0,0,0, 0.5);
+  font-weight: bold;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 25px;
@@ -100,10 +115,10 @@ height: 100%;
   color: dodgerblue;
 }
 
-/* img{
+img{
   display: block;
   margin: auto;
-} */
+}
 .clickMe{
   font-size: 10px;
 }
