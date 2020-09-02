@@ -46,7 +46,6 @@ function createHeightList() {
 			// setting bmi variable
 			var bmi = response.bmi;
 			bmi = Math.floor(bmi);
-				
 			// setting health description
 			var bmiDescription = response.health;
 			// setting healthy bmi range
@@ -62,12 +61,6 @@ function createHeightList() {
 			$("#health").html(bmiD)
 			$("#range").html(bmiRange1);
 			console.log
-		
-			//   <div id="BMI"></div>
-            //                 <br></br>
-            //             <div id="health"></div>
-            //                 <br></br>
-            //             <div id="range"></div>
 });
 });
 	// Onclick function for Recipe Form Submission
@@ -88,9 +81,10 @@ function createHeightList() {
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
 			let randomHit = response.hits[Math.floor(Math.random() * response.hits.length)];
-			let recipeURL = randomHit.recipe.url;
 			let recipeName = randomHit.recipe.label;
+			let recipeURL = randomHit.recipe.url;
 			let recipeSearchImg = randomHit.recipe.image;
+			console.log(recipeSearchImg)
 			let healthLabel = [];
 			let ingredients = [];
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
@@ -99,8 +93,7 @@ function createHeightList() {
 			let healthText = $("<h3 id='healthText'>");
 			let healthDesc = $("<h3 id='healthDesc'>");
 			let anchor = $("#anchor").prop("href", recipeURL);
-			
-			
+				
 			$("#anchor").html(anchor)
 			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
