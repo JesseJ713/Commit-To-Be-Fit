@@ -88,32 +88,24 @@ function createHeightList() {
 			let recipeURL = randomHit.recipe.url;
 			let recipeName = randomHit.recipe.label;
 			let recipeSearchImg = randomHit.recipe.image;
-			// let recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
 			let healthLabel = [];
 			let ingredients = [];
-			let imgClick = $("<p>").text("Click the Image to view the recipe website!").addClass("clickImg");
-			let imgSrc = $("<img src=" + recipeSearchImg + " id='imgSrc'></img>");
-			// let anchor = $("<a id='anchor' target='_blank'>" + imgSrc + "</a>");
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
 			let h1 = $("<h1 id='underPic'>");
 			let p = $("<p id='desc'>");
 			let healthText = $("<p id='healthText'>");
 			let healthDesc = $("<p id='healthDesc'>");
+			let anchor = $("#anchor").prop("href", recipeURL);
+
+			$("#anchor").html(anchor)
+			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
-			// $("#anchor").html(anchor);
 			$("#imgSrc").html(img);
 			$("#underPic").html(h1);
 			$("#desc").html(p);
 			$("#healthText").html(healthText);
 			$("healthDesc").html(healthDesc);
-			console.log(img)
-			// console.log(imgSrc.textContent);
-			// console.log(anchor);
-			// $("#foodTitle").append(anchor)
-			// $("#anchor").prop("href", recipeURL);
-			// $("#imgSrc").append(recipeDisplayImage);
-			// $("#foodTitle").text(recipeName).append(imgClick);
-			// for loop to add ingredients to array
+
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
 				const list = randomHit.recipe.ingredientLines[j];
 				ingredients.push(list);

@@ -12,15 +12,12 @@
 
 <body>
 
-
     <div class="wrapper">
 
         <nav class="navbar">
             <h1 class="title">Commit to be Fit</h1>
 
-
         </nav>
-
 
         <div class="main-content">
 
@@ -33,8 +30,6 @@
                     <option value="1"></option>
                 </select>
                 <br><br>
-
-
 
                 <label for="weight">What's your weight?</label>
                 <select id="dropdown-weight" class="dropdown-weight" name="weight">
@@ -51,56 +46,44 @@
                 <input id="bmiSubmit" class="submitBtn" type="submit" value="Submit">
             </form>
 
-
-
-
             <div class="form3" style="width: 18rem">
                 <div class="card-body">
                     <h1 class=bmiTitle>Your Results:</h1>
-                    <div class="BMI"></div>
-                    <br></br>
-                    <div class="health"></div>
-                    <br></br>
-                    <div class="range"></div>
+                        <div class="BMI"></div>
+                            <br></br>
+                        <div class="health"></div>
+                            <br></br>
+                        <div class="range"></div>
                 </div>
-                </form>
             </div>
 
         </div>
 
-        <div class="row">
-            <div class="form2">
-                <label for="">What type of food do you like?</label>
-                <select id="dropdown-recipe" class="dropdown-=" name="=">
-                    <option value="chicken">Chicken</option>
-                    <option value="fish">Fish</option>
-                    <option value="steak">Steak</option>
-                    <option value="vegetables">Vegetables</option>
-                </select>
-                <br><br>
-                <input id="recipeSubmit" class="submitBtn" type="submit" value="Submit">
+    <div class="row">
+        <div class="form2">
+            <label for="">What type of food do you like?</label>
+            <select id="dropdown-recipe" class="dropdown-=" name="=">
+                <option value="chicken">Chicken</option>
+                <option value="fish">Fish</option>
+                <option value="steak">Steak</option>
+                <option value="vegetables">Vegetables</option>
+            </select>
+            <br><br>
+            <input id="recipeSubmit" class="submitBtn" type="submit" value="Submit">
             <div id="recipeOutput" class="form2">
                 <h1 id="foodTitle">Recipe</h1>
-                
-                <img id="imgSrc"></img>
+                    <a id="anchor">
+                        <img id="imgSrc"></img>
+                    </a>
                 <h1 id="underPic"></h1>
-                <p id="desc"></p>
+                    <p id="desc"></p>
                 <h1 id="healthText"></h1>
-                <p id="healthDesc"></p>
+                    <p id="healthDesc"></p>
+                </div>
+
+                </div>
             </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
+    </div>
 
         <script defer src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
