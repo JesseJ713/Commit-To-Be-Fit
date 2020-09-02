@@ -112,8 +112,33 @@ height: 100%;
 
 
 .title{
-  color: dodgerblue;
+  color: white;
+  font-size: 80px;
+  text-shadow: 0px 0px 10px white;
+  
+  background-color: rgba(0,0,0, 0.5) ;
+  width: 50%;
+  margin: auto;
+  border-radius: 25px;
+  border: 3px solid;
+  border-color: #333;
+  /* font-size: 80px;
+  
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: White;
+  text-shadow: 
+    -1px -1px 0 midnightblue,
+    -2px -2px 0 midnightblue,
+    -3px -3px 0 midnightblue,
+    -4px -4px 0 midnightblue,
+    -5px -5px 0 midnightblue,
+    -6px -6px 0 midnightblue,
+    -7px -7px 0 midnightblue,
+    -8px -8px 0 midnightblue,
+    -30px 20px 40px dimgrey */
 }
+
 
 img{
   display: block;
