@@ -4,21 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Commit To Be Fit</title>
 </head>
-
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
+</style>
+<!-- <body class="w3-content" style="max-width:1200px"> -->
 <body>
 
-    <div class="wrapper">
+<!-- side Nav bar by W3 schools framework -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16 w3-center">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-centered"></i>
+    <h3 class="w3-wide w3-center w3-xlarge"><b>Commit<br>to be</br><b></b>Fit</b></h3>
+  </div>
+<!-- first NavBar Button -->
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a onclick="contactUs()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-centered" id="myBtn">
+    <i class="fab fa-github fa-3x fa-spin"></i><br>GitHub
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="https://github.com/JesseJ713" target="_blank" class="w3-bar-item w3-button w3-padding">Jesse</a>
+        <a href="https://github.com/ParkerM2" target="_blank" class="w3-bar-item w3-button w3-padding">Parker</a>
+        <a href="https://github.com/paulmorales7" target="_blank" class="w3-bar-item w3-button w3-padding">Paul</a> 
+        <a href="https://github.com/trevinomoni" target="_blank" class="w3-bar-item w3-button w3-padding">Monica</a> 
+    </div>
+<!-- Next Button/link -->
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a onclick="contactUs1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-centered" id="myBtn">
+     <i class="fab fa-linkedin fa-3x fa-spin"></i><br>LinkedIn
+    </a>
+    <div id="linkedInDiv" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="https://www.linkedin.com/in/jesse-jackson-atx/" target="_blank" class="w3-bar-item w3-button w3-padding">Jesse</a>
+        <a href="https://www.linkedin.com/in/parker-manning-223a401a9/" target="_blank" class="w3-bar-item w3-button w3-padding">Parker</a>
+        <a href="" target="_blank" class="w3-bar-item w3-button w3-padding">Paul</a> 
+        <a href="https://www.linkedin.com/in/mtrevinom7/" target="_blank" class="w3-bar-item w3-button w3-padding">Monica</a> 
+    </div>
+</nav>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-        <nav class="navbar">
-            <h1 class="title">Commit to be Fit</h1>
-
-        </nav>
-
+    <div class="w3-container w3-padding-64">
         <div class="main-content">
 
             <form class="form1">
@@ -61,6 +93,7 @@
 
     <div class="row">
         <div class="form2">
+        <h1>Random Recipe Generator</h1>
             <label for="">What type of food do you like?</label>
             <select id="dropdown-recipe" class="dropdown-=" name="=">
                 <option value="chicken">Chicken</option>
@@ -69,9 +102,9 @@
                 <option value="vegetables">Vegetables</option>
             </select>
             <br><br>
-            <input id="recipeSubmit" class="submitBtn" type="submit" value="Submit">
+            <input id="recipeSubmit" class="submitBtn" type="submit" value="Search">
             <div id="recipeOutput" class="form2">
-                <h1 id="foodTitle">Recipe</h1>
+                <h1 id="foodTitle"></h1>
                     <a id="anchor">
                         <img id="imgSrc"></img>
                     </a>
@@ -84,7 +117,39 @@
                 </div>
             </div>
     </div>
+</div>
+<script>
+function contactUs() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+function contactUs1() {
+  var x = document.getElementById("linkedInDiv");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
 
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
         <script defer src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

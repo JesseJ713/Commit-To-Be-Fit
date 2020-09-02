@@ -108,7 +108,9 @@ height: 100%;
   border: 3px solid;
   border-radius: 25px;
 }
-
+.titleText{
+  text-align: center;
+}
 
 
 .title{
