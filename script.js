@@ -100,7 +100,7 @@ function createHeightList() {
 				const list = randomHit.recipe.ingredientLines[j];
 				ingredients.push(list);
 			}
-			$("#desc").html("<ul><li>" + ingredients.join("</li><li>"));
+			$("#desc").html("<li>" + ingredients.join("</li><li>"));
 			$("#underPic").html("These are the ingredients you'll need: " );
 			// for loop for store/listing health labels
 			for (i = 0; i < randomHit.recipe.healthLabels.length; i++){
@@ -108,7 +108,7 @@ function createHeightList() {
 				healthLabel.push(list);
 			}
 			$("#healthText").html("Health Labels: ");
-			$("#healthDesc").html("<ul><li>" + healthLabel.join("</li><li>"));
+			$("#healthDesc").html("<li>" + healthLabel.join("</li><li>"));
    		});
 });
 })
