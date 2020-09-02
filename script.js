@@ -43,17 +43,31 @@ function createHeightList() {
 			}
 		};
 		$.ajax(responseFitCal).done(function (response) {
-		// setting bmi variable
-		var bmi = response.bmi;
-		bmi = Math.floor(bmi);
-		// setting health description
-		var bmiDescription = response.health;
-		// setting healthy bmi range
-		var bmiRange = response.healthy_bmi_range;
-		// appending variables to the div
-		$(".BMI").text("BMI: " + bmi);
-		$(".health").text("BMI Description: " + bmiDescription);
-		$(".range").text("Healthy BMI Range: " + bmiRange);	
+			// setting bmi variable
+			var bmi = response.bmi;
+			bmi = Math.floor(bmi);
+				
+			// setting health description
+			var bmiDescription = response.health;
+			// setting healthy bmi range
+			var bmiRange = response.healthy_bmi_range;
+			let resultsH1 = $("<p id='bmiTitle'>Your Results:</p>")
+			let bmiResults = $("<p id='BMI'>Your BMI: " + bmi + "</p>")
+			let bmiD = $("<p id='health'>BMI Description: " + bmiDescription +  "</p>")
+			let bmiRange1 = $("<p id='range'>Healthy BMI Range: " + bmiRange + "</p>")
+			// appending variables to the div
+			$("#bmiTitle").html(resultsH1)
+			$("#BMI").html(bmiResults);	
+
+			$("#health").html(bmiD)
+			$("#range").html(bmiRange1);
+			console.log
+		
+			//   <div id="BMI"></div>
+            //                 <br></br>
+            //             <div id="health"></div>
+            //                 <br></br>
+            //             <div id="range"></div>
 });
 });
 	// Onclick function for Recipe Form Submission
@@ -94,7 +108,7 @@ function createHeightList() {
 			$("#underPic").html(h1);
 			$("#desc").html(p);
 			$("#healthText").html(healthText);
-			$("healthDesc").html(healthDesc);
+			$("#healthDesc").html(healthDesc);
 
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
 				const list = randomHit.recipe.ingredientLines[j];

@@ -27,7 +27,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
 <!-- first NavBar Button -->
   <div class="w3-large" style="font-weight:bold">
     <a onclick="contactUs()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-centered w3-hover-orange" id="myBtn">
-    <i class="fab fa-github fa-3x fa-spin"></i><br>GitHub
+        <i class="fab fa-github fa-3x fa-spin"></i><br>GitHub
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding w3-medium">
         <a href="https://github.com/JesseJ713" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-red">Jesse</a>
@@ -38,7 +38,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
 <!-- Next Button/link -->
     <div class="w3-large w3-text-grey" style="font-weight:bold">
         <a onclick="contactUs1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-centered" id="myBtn">
-        <i class="fab fa-linkedin fa-3x fa-spin"></i><br>LinkedIn</a>
+            <i class="fab fa-linkedin fa-3x fa-spin"></i><br>LinkedIn</a>
     <div id="linkedInDiv" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="https://www.linkedin.com/in/jesse-jackson-atx/" target="_blank" class="w3-bar-item w3-button w3-padding">Jesse</a>
         <a href="https://www.linkedin.com/in/parker-manning-223a401a9/" target="_blank" class="w3-bar-item w3-button w3-padding">Parker</a>
@@ -48,20 +48,20 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
 <!-- Next Button -->
     <div class="w3-large w3-text-grey" style="font-weight:bold">
         <a id="myBtn"onclick="descriptionDropDown()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-centered"">
-        <i class="far fa-address-card fa-3x fa-spin"></i><br>Team Description</a>
+            <i class="far fa-address-card fa-3x fa-spin"></i><br>Team Description</a>
     <div id="descriptionDropDown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a class="w3-bar-item w3-button w3-padding w3-center">Jesse</a>
-        <li>GitHub Master</li>
-        <li>Back-End Developer</li>
+            <li>GitHub Master</li>
+            <li>Back-End Developer</li>
         <a class="w3-bar-item w3-button w3-center w3-padding">Parker</a>
-        <li>Full-Stack Developer</li>
-        <li>Team Mascot</li>
+            <li>Full-Stack Developer</li>
+            <li>Team Mascot</li>
         <a class="w3-bar-item w3-button w3-center w3-padding">Paul</a>
-        <li>Front-End Developer</li>
-        <li>Concept Artist</li>
+            <li>Front-End Developer</li>
+            <li>Concept Artist</li>
         <a class="w3-bar-item w3-button w3-center w3-padding">Monica</a> 
-        <li>Front-End Developer</li>
-        <li>Presentation Design</li>
+            <li>Front-End Developer</li>
+            <li>Presentation Design</li>
     </div>
     </div>
 <!-- stickman img -->
@@ -70,45 +70,37 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
     </div>
         
 </nav>
- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
 <div class="w3-overlay w3-hide-large w3-content" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<body class="w3-them-14 w3-text-center" style="min-width:400px">
-    <div class="w3-container">
-        <div class="w3-container w3-content main-content">
-            <form class="w3-container w3-center form1">
-                <h1 class="QTitle">BMI Form</h1>
-                <label for="age">What's your age?</label>
-                <select id="dropdown" class="dropdown-age" name="age">
-                    <option value="1"></option>
-                </select>
-                <br>
-                <label for="weight">What's your weight?</label>
-                <select id="dropdown-weight" class="dropdown-weight" name="weight">
-                    <option value="1"></option>
-                </select>
-                <br>
-                <label for="height">What's your height?</label>
-                <select id="dropdown-height" class="dropdown-height" name="height">
-                    <option></option>
-                </select>
-                <br>
-            </form>
+    <div class="w3-display-container w3-container">
+        
+            <div class="w3-container w3-center w3-text-black w3-cell-row">
+                <h1 class="w3-jumbo w3-hide-small">BMI Form</h1>
+                    <label for="age">What's your age?</label>
+                    <select id="dropdown" class="dropdown-age" name="age"></select>
+                    </select>
+                        <br>
+                    <label for="weight">What's your weight?</label>
+                    <select id="dropdown-weight" class="dropdown-weight" name="weight">
+                    </select>
+                        <br>
+                    <label for="height">What's your height?</label>
+                    <select id="dropdown-height" class="dropdown-height" name="height">
+                    </select>
+                        <br>
+                    
+                <div id="bmiTitle" class="card-body bmiTitle"></div>
+                    <!-- <h1 class=bmiTitle>Your Results:</h1> -->
+                    <div id="BMI"></div>
+                        <br></br>
+                    <div id="health"></div>
+                        <br></br>
+                    <div id="range"><div>
+            </div>
             <button id="bmiSubmit" class="w3-button w3-bar w3-text-black w3-hover-cyan submitBtn" type="submit" value="Submit">Submit</button>
         </div>
-    </div>   
-            <div class="w3-container w3-content form3" style="width: 18rem">
-                <div class="card-body">
-                    <h1 class=bmiTitle>Your Results:</h1>
-                        <div class="BMI"></div>
-                            <br></br>
-                        <div class="health"></div>
-                            <br></br>
-                        <div class="range"></div>
-                </div>
-            </div>
-        </div>
 
-    <div class="w3-container w3-content w3-center row">
+    <div class="w3-container w3-content w3-center">
         <div class=" w3-container w3-content form2">
         <h1>Random Recipe Generator</h1>
             <label for="">What type of food do you like?</label>
@@ -127,12 +119,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
                     <p id="desc"></p>
                 <h1 id="healthText"></h1>
                     <p id="healthDesc"></p>
+                    <button id="recipeSubmit" class="w3-button w3-bar w3-text-black w3-hover-cyan submitBtn" type="submit" value="Search">Search</button>
                 </div>
 
-                </div>
-                <button id="recipeSubmit" class="w3-button w3-bar submitBtn" type="submit" value="Search">Search</button>
+                </div>    
             </div>
+            
     </div>
+    
 </div>
 <script>
 function contactUs() {
