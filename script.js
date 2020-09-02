@@ -1,15 +1,4 @@
 $(document).ready(function () {
-	// // Searches through recipes for info
-	// function recipeSearchParser(recipeSearchInfo) {
-
-	// 	// console.log(recipeSearchInfo.hits[0].recipe.label);
-	// 	recipeParser(recipeSearchInfo.hits[1].recipe);
-	// }
-
-	// // Capable of returning info from different recipes
-	// function recipeParser (recipe) {
-	// 	// console.log(recipe.label)
-	// }
 // function for creating a dropdown menu with a list of ages with a corresponding value
 createAgeList();
 function createAgeList() {
@@ -19,7 +8,7 @@ function createAgeList() {
 		$("#dropdown").append(select)
 }};
 // function for the weight dropdown list
-	createWeightList();
+createWeightList();
 function createWeightList() {
 	for(i = 5; i < 400; i=i+5){
 		select = "";
@@ -28,7 +17,7 @@ function createWeightList() {
 	}
 }
 // function for the height dropdown list
-	createHeightList();
+createHeightList();
 function createHeightList() {
 	for(i = 5; i <= 250; i=i+5) {
 	select = "";
@@ -88,32 +77,25 @@ function createHeightList() {
 			let recipeURL = randomHit.recipe.url;
 			let recipeName = randomHit.recipe.label;
 			let recipeSearchImg = randomHit.recipe.image;
-			// let recipeDisplayImage = $("#imgSrc").attr("src", recipeSearchImg);
 			let healthLabel = [];
 			let ingredients = [];
-			let imgClick = $("<p>").text("Click the Image to view the recipe website!").addClass("clickImg");
-			let imgSrc = $("<img src=" + recipeSearchImg + " id='imgSrc'></img>");
-			// let anchor = $("<a id='anchor' target='_blank'>" + imgSrc + "</a>");
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
 			let h1 = $("<h1 id='underPic'>");
 			let p = $("<p id='desc'>");
 			let healthText = $("<p id='healthText'>");
 			let healthDesc = $("<p id='healthDesc'>");
+			let anchor = $("#anchor").prop("href", recipeURL);
+			
+			
+			$("#anchor").html(anchor)
+			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
-			// $("#anchor").html(anchor);
 			$("#imgSrc").html(img);
 			$("#underPic").html(h1);
 			$("#desc").html(p);
 			$("#healthText").html(healthText);
 			$("healthDesc").html(healthDesc);
-			console.log(img)
-			// console.log(imgSrc.textContent);
-			// console.log(anchor);
-			// $("#foodTitle").append(anchor)
-			// $("#anchor").prop("href", recipeURL);
-			// $("#imgSrc").append(recipeDisplayImage);
-			// $("#foodTitle").text(recipeName).append(imgClick);
-			// for loop to add ingredients to array
+
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
 				const list = randomHit.recipe.ingredientLines[j];
 				ingredients.push(list);
