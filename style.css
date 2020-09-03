@@ -5,6 +5,7 @@
   padding: 0;
   font-family: 'Nunito', sans-serif;
 }
+
 html { 
   background: url(fitness\ background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -12,13 +13,16 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
 .wrapper{
 background-size: cover;
 height: 100%;
 }
+
 .w3-NewsCycle {
   font-family: "News Cycle", serif;
 }
+
 #panelContainer {
   width: 50%;
   margin: auto;
