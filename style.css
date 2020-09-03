@@ -6,7 +6,7 @@
   font-family: 'Nunito', sans-serif;
 }
 html { 
-  background: url(fitness\ background.jpg) no-repeat center center fixed; 
+  background: url(fitness\ background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,6 +17,15 @@ html {
 no-repeat;
 background-size: cover;
 height: 100%;
+}
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+#panelContainer {
+  width: 50%;
+  margin: auto;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 50px;
 }
 /* .w3-container{
   margin-left: 200px;
