@@ -84,7 +84,6 @@ function createHeightList() {
 			let recipeName = randomHit.recipe.label;
 			let recipeURL = randomHit.recipe.url;
 			let recipeSearchImg = randomHit.recipe.image;
-			console.log(recipeSearchImg)
 			let healthLabel = [];
 			let ingredients = [];
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
@@ -104,6 +103,7 @@ function createHeightList() {
 			$("#healthDesc").html(healthDesc);
 
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
+				console.log(randomHit)
 				const list = randomHit.recipe.ingredientLines[j];
 				ingredients.push(list);
 			}
