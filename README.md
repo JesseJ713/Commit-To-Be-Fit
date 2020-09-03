@@ -61,8 +61,3 @@ Bob Deckard - Instructor -  https://github.com/bdeckard92
 W3 Schools - W3.CSS Framework - https://www.w3schools.com/w3css/defaulT.asp
 
 ---
-
-
-
-
-
