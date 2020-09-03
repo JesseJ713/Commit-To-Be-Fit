@@ -31,11 +31,11 @@ function createHeightList() {
 // Onclick button for BMI Form Submission
 	$("#bmiSubmit").on("click", function (e) {
 		e.preventDefault();
-		var age = $(".dropdown-age").val();
-		var height = $(".dropdown-height").val();
-		var weight = $(".dropdown-weight").val();
-		var queryURLFitCal = "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight;
-		var responseFitCal =  {
+		let age = $(".dropdown-age").val();
+		let height = $(".dropdown-height").val();
+		let weight = $(".dropdown-weight").val();
+		let queryURLFitCal = "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight;
+		let responseFitCal =  {
 			async : true,
 			url: queryURLFitCal,
 			method: "GET",
@@ -45,10 +45,10 @@ function createHeightList() {
 			}
 		};
 		$.ajax(responseFitCal).done(function (response) {
-			var bmi = response.bmi;
+			let bmi = response.bmi;
 			bmi = Math.floor(bmi);
-			var bmiDescription = response.health;
-			var bmiRange = response.healthy_bmi_range;
+			let bmiDescription = response.health;
+			let bmiRange = response.healthy_bmi_range;
 			let resultsH1 = $("<h3 id='bmiTitle'>Your Results:</h3>")
 			let bmiResults = $("<h3 id='BMI'>Your BMI: " + bmi + "</h3>")
 			let bmiD = $("<h3 id='health'>BMI Description: " + bmiDescription +  "</h3>")
@@ -65,8 +65,8 @@ function createHeightList() {
 	$("#recipeSubmit").on("click", function (e) {
 		e.preventDefault();
 		recipeInput = $("#dropdown-recipe").val();
-		var queryURLRecipe = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + recipeInput;
-		var recipeSearch = {
+		let queryURLRecipe = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + recipeInput;
+		let recipeSearch = {
 			"async": true,
 			"crossDomain": true,
 			"url": queryURLRecipe,
@@ -107,6 +107,7 @@ function createHeightList() {
 			}
 			$("#desc").html("<li>" + ingredients.join("</li><li>"));
 			$("#underPic").html("These are the ingredients you'll need: " );
+			
 			// For loop for store/listing health labels
 			for (i = 0; i < randomHit.recipe.healthLabels.length; i++){
 				const list = randomHit.recipe.healthLabels[i];
