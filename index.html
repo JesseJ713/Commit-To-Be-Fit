@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Commit To Be Fit</title>
@@ -42,7 +43,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
     <div id="linkedInDiv" class="w3-bar-block w3-hide w3-padding w3-medium w3-cyan">
         <a href="https://www.linkedin.com/in/jesse-jackson-atx/" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-red">Jesse</a>
         <a href="https://www.linkedin.com/in/parker-manning-223a401a9/" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-cyan">Parker</a>
-        <a href="" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-lime">Paul</a> 
+        <a href="https://www.linkedin.com/in/paul-morales-9a9571189" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-lime">Paul</a> 
         <a href="https://www.linkedin.com/in/mtrevinom7/" target="_blank" class="w3-bar-item w3-button w3-padding w3-hover-orange">Monica</a> 
     </div>
 <!-- Next Button -->
@@ -72,20 +73,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
 </nav>
     <button class="w3-button w3-teal w3-xlarge w3-hover-blue" onclick="w3_open()">☰</button>
 <div class="w3-overlay w3-hide-large w3-content" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-    <div class="w3-display-container w3-container">
-        
-            <div class="w3-container w3-center w3-text-black w3-cell-row">
-                <h1 class="w3-jumbo w3-hide-small">BMI Form</h1>
-                    <h2 for="age">What's your age?</h2>
-                    <select id="dropdown" class="dropdown-button w3-dropdown-hover" name="age"></select>
+    <div id="panelContainer" class="w3-cell-row">
+        <div class="w3-container w3-card w3-cell w3-cell-middle w3-center">
+            <h1 style="text-shadow:1px 1px 0 #444" class="w3-jumbo w3-hide-small w3-lobster w3-text-cyan">BMI Form</h1>
+                <h2 for="age" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-NewsCycle">What's your age?</h2>
+                    <select id="dropdown" class="dropdown-button w3-dropdown-hover" name="age"><option></option></select>
                     </select>
                         <br>
-                    <h2 for="weight">What's your weight?</h2>
-                    <select id="dropdown-weight" class="dropdown-weight" name="weight">
+                    <h2 for="weight" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-lobster">What's your weight?</h2>
+                    <select id="dropdown-weight" class="dropdown-weight" name="weight"><option></option>
                     </select>
                         <br>
-                    <h2 for="height">What's your height?</h2>
-                    <select id="dropdown-height" class="dropdown-height" name="height">
+                    <h2 for="height" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-lobster">What's your height?</h2>
+                    <select id="dropdown-height" class="dropdown-height" name="height"><option></option>
                     </select>
                         <br>
                     
@@ -97,20 +97,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
                         <br></br>
                     <div id="range"><div>
             </div>
-            <button id="bmiSubmit" class="w3-button w3-bar w3-text-black w3-hover-cyan submitBtn" type="submit" value="Submit">Submit</button>
-        </div>
-
+            <button id="bmiSubmit" class="w3-button w3-block w3-wide w3-text-cyan w3-hover-cyan submitBtn" type="submit" value="Submit">Submit</button>
+    </div>
     <div class="w3-container w3-content w3-center">
         <div class=" w3-container w3-content form2">
-        <h1 class="w3-jumbo w3-hide-small">Random Recipe Generator</h1>
-            <h2 for="">What type of food do you like?</h2>
-            <select id="dropdown-recipe" class="dropdown-=" name="=">
+        <h1 class="w3-jumbo w3-hide-small w3-text-cyan">Random Recipe Generator</h1>
+            <h2 class="w3-text-cyan"for="">What type of food do you like?</h2>
+            <select id="dropdown-recipe" class="dropdown-=" name="="><option></option>
                 <option value="chicken">Chicken</option>
                 <option value="fish">Fish</option>
                 <option value="steak">Steak</option>
                 <option value="vegetables">Vegetables</option>
             </select>
-            <div id="recipeOutput" class="form2">
+            <div id="recipeOutput" class="w3-text-cyan">
                 <h1 id="foodTitle"></h1>
                     <a id="anchor">
                         <img id="imgSrc"></img>
@@ -119,14 +118,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
                     <h3 id="desc"></h3>
                 <h1 id="healthText"></h1>
                     <h3 id="healthDesc"></h3>
-                    <button id="recipeSubmit" class="w3-button w3-bar w3-text-black w3-hover-cyan submitBtn" type="submit" value="Search">Search</button>
                 </div>
-
+                <button id="recipeSubmit" class="w3-button w3-block w3-wide w3-text-cyan w3-hover-cyan submitBtn" type="submit" value="Search">Search</button>
                 </div>    
-            </div>
-            
+            </div>     
     </div>
-    
 </div>
 <script>
 function contactUs() {
@@ -155,14 +151,11 @@ function descriptionDropDown() {
 }
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
 document.getElementById("myBtn").click();
-
-
 // Open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "content";
   document.getElementById("mySidebar").style.display = "block";
 }
- 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
