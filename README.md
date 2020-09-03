@@ -9,7 +9,7 @@ https://jessej713.github.io/Commit-To-Be-Fit/
 ---
 
 ## Your First Step
-Programmers know all too well when making progress, one must first commit! The goal of this program is to inform users of their current BMI and direct them to an appropriate meal of their choosing.
+Whether in life or in code, to begin progress; one must first commit! The goal of this program is to inform users of their current BMI and direct them to an appropriate meal of their choosing.
 
 **AS A** health enthusiast
 
