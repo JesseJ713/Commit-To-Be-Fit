@@ -43,17 +43,24 @@ function createHeightList() {
 			}
 		};
 		$.ajax(responseFitCal).done(function (response) {
-		// setting bmi variable
-		var bmi = response.bmi;
-		bmi = Math.floor(bmi);
-		// setting health description
-		var bmiDescription = response.health;
-		// setting healthy bmi range
-		var bmiRange = response.healthy_bmi_range;
-		// appending variables to the div
-		$(".BMI").text("BMI: " + bmi);
-		$(".health").text("BMI Description: " + bmiDescription);
-		$(".range").text("Healthy BMI Range: " + bmiRange);	
+			// setting bmi variable
+			var bmi = response.bmi;
+			bmi = Math.floor(bmi);
+			// setting health description
+			var bmiDescription = response.health;
+			// setting healthy bmi range
+			var bmiRange = response.healthy_bmi_range;
+			let resultsH1 = $("<h3 id='bmiTitle'>Your Results:</h3>")
+			let bmiResults = $("<h3 id='BMI'>Your BMI: " + bmi + "</h3>")
+			let bmiD = $("<h3 id='health'>BMI Description: " + bmiDescription +  "</h3>")
+			let bmiRange1 = $("<h3 id='range'>Healthy BMI Range: " + bmiRange + "</h3>")
+			// appending variables to the div
+			$("#bmiTitle").html(resultsH1)
+			$("#BMI").html(bmiResults);	
+
+			$("#health").html(bmiD)
+			$("#range").html(bmiRange1);
+			console.log
 });
 });
 	// Onclick function for Recipe Form Submission
@@ -74,19 +81,19 @@ function createHeightList() {
 		$.ajax(recipeSearch).done(function (response) {
 			console.log("Recipe Search response: ", response);
 			let randomHit = response.hits[Math.floor(Math.random() * response.hits.length)];
-			let recipeURL = randomHit.recipe.url;
 			let recipeName = randomHit.recipe.label;
+			let recipeURL = randomHit.recipe.url;
 			let recipeSearchImg = randomHit.recipe.image;
+			console.log(recipeSearchImg)
 			let healthLabel = [];
 			let ingredients = [];
 			let img = $("#imgSrc").attr({src: recipeSearchImg, id: "imgSrc" });
 			let h1 = $("<h1 id='underPic'>");
-			let p = $("<p id='desc'>");
-			let healthText = $("<p id='healthText'>");
-			let healthDesc = $("<p id='healthDesc'>");
+			let p = $("<h3 id='desc'>");
+			let healthText = $("<h3 id='healthText'>");
+			let healthDesc = $("<h3 id='healthDesc'>");
 			let anchor = $("#anchor").prop("href", recipeURL);
-			
-			
+				
 			$("#anchor").html(anchor)
 			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
@@ -94,7 +101,7 @@ function createHeightList() {
 			$("#underPic").html(h1);
 			$("#desc").html(p);
 			$("#healthText").html(healthText);
-			$("healthDesc").html(healthDesc);
+			$("#healthDesc").html(healthDesc);
 
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
 				const list = randomHit.recipe.ingredientLines[j];
