@@ -7,6 +7,7 @@ function createAgeList() {
 		select += "<option value=" + i + ">" + i + "</option>";
 		$("#dropdown").append(select)
 }};
+
 // function for the weight dropdown list
 createWeightList();
 function createWeightList() {
@@ -16,6 +17,7 @@ function createWeightList() {
 		$("#dropdown-weight").append(select);
 	}
 }
+
 // function for the height dropdown list
 createHeightList();
 function createHeightList() {
@@ -25,13 +27,13 @@ function createHeightList() {
 	$("#dropdown-height").append(select);
 	};
 };
+
 // Onclick button for BMI Form Submission
 	$("#bmiSubmit").on("click", function (e) {
 		e.preventDefault();
 		var age = $(".dropdown-age").val();
 		var height = $(".dropdown-height").val();
 		var weight = $(".dropdown-weight").val();
-		// Fit Cal Response
 		var queryURLFitCal = "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight;
 		var responseFitCal =  {
 			async : true,
@@ -43,24 +45,20 @@ function createHeightList() {
 			}
 		};
 		$.ajax(responseFitCal).done(function (response) {
-			// setting bmi variable
 			var bmi = response.bmi;
 			bmi = Math.floor(bmi);
-			// setting health description
 			var bmiDescription = response.health;
-			// setting healthy bmi range
 			var bmiRange = response.healthy_bmi_range;
 			let resultsH1 = $("<h3 id='bmiTitle'>Your Results:</h3>")
 			let bmiResults = $("<h3 id='BMI'>Your BMI: " + bmi + "</h3>")
 			let bmiD = $("<h3 id='health'>BMI Description: " + bmiDescription +  "</h3>")
 			let bmiRange1 = $("<h3 id='range'>Healthy BMI Range: " + bmiRange + "</h3>")
-			// appending variables to the div
+
+			// Dynamically appending elements to page with each promised return
 			$("#bmiTitle").html(resultsH1)
 			$("#BMI").html(bmiResults);	
-
 			$("#health").html(bmiD)
 			$("#range").html(bmiRange1);
-			console.log
 });
 });
 	// Onclick function for Recipe Form Submission
@@ -75,11 +73,10 @@ function createHeightList() {
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
-				"x-rapidapi-key": "a1e9e9d373msh3ca1d0f878e9747p19baebjsn783a970a3456"
+				"x-rapidapi-key": "79b6d03564msh3568c299c24350fp18e97ajsndf6c82590b5c"
 			}
 		}
 		$.ajax(recipeSearch).done(function (response) {
-			console.log("Recipe Search response: ", response);
 			let randomHit = response.hits[Math.floor(Math.random() * response.hits.length)];
 			let recipeName = randomHit.recipe.label;
 			let recipeURL = randomHit.recipe.url;
@@ -92,7 +89,8 @@ function createHeightList() {
 			let healthText = $("<h3 id='healthText'>");
 			let healthDesc = $("<h3 id='healthDesc'>");
 			let anchor = $("#anchor").prop("href", recipeURL);
-				
+			
+			// Dynamically appending elements to page with each promised return
 			$("#anchor").html(anchor)
 			img.appendTo("#anchor");
 			$("#foodTitle").html(recipeName);
@@ -102,14 +100,14 @@ function createHeightList() {
 			$("#healthText").html(healthText);
 			$("#healthDesc").html(healthDesc);
 
+			// For loop for choosing with recipe within array to display
 			for (j = 0; j < randomHit.recipe.ingredientLines.length; j++){
-				console.log(randomHit)
 				const list = randomHit.recipe.ingredientLines[j];
 				ingredients.push(list);
 			}
 			$("#desc").html("<li>" + ingredients.join("</li><li>"));
 			$("#underPic").html("These are the ingredients you'll need: " );
-			// for loop for store/listing health labels
+			// For loop for store/listing health labels
 			for (i = 0; i < randomHit.recipe.healthLabels.length; i++){
 				const list = randomHit.recipe.healthLabels[i];
 				healthLabel.push(list);
