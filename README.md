@@ -4,7 +4,11 @@ https://jessej713.github.io/Commit-To-Be-Fit/
 
 ---
 
-![Commit To Be Fit Screenshot](/Commit-To-Be-Fit.PNG?raw=true "Commit To Be Fit")
+![](./nav-bar.gif)
+
+---
+
+![](functionality.gif)
 
 ---
 
