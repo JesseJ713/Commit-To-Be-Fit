@@ -75,7 +75,7 @@ function createHeightList() {
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
-				"x-rapidapi-key": "a1e9e9d373msh3ca1d0f878e9747p19baebjsn783a970a3456"
+				"x-rapidapi-key": "79b6d03564msh3568c299c24350fp18e97ajsndf6c82590b5c"
 			}
 		}
 		$.ajax(recipeSearch).done(function (response) {
