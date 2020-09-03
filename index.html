@@ -14,11 +14,7 @@
 
     <title>Commit To Be Fit</title>
 </head>
-<style>
-.w3-sidebar a {font-family: "Roboto", sans-serif}
-body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
-</style>
-<body>
+<body class="">
 <!-- side Nav bar by W3 schools framework -->
 <nav class="w3-sidebar w3-bar-block w3-cyan" style="display:none" id="mySidebar">
     <button onclick="w3_close()" class=" w3-hover-teal w3-item w3-button w3-large w3-cyan">Close &times;</button>
@@ -76,34 +72,34 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
 <div class="w3-overlay w3-hide-large w3-content" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
     <div id="panelContainer" class="w3-cell-row">
         <div class="w3-container w3-card w3-cell w3-cell-middle w3-center">
-            <h1 style="text-shadow:1px 1px 0 #444" class="w3-jumbo w3-hide-small w3-lobster w3-text-cyan">BMI Form</h1>
-                <h2 for="age" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-NewsCycle">What's your age?</h2>
+            <h1 style="text-shadow:1px 1px 0 #444" class="w3-jumbo w3-hide-small w3-new w3-text-cyan">BMI Form</h1>
+                <h2 for="age" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-wide w3-NewsCycle">What's your age?</h2>
                     <select id="dropdown" class="dropdown-button w3-dropdown-hover" name="age"><option></option></select>
                     </select>
                         <br>
-                    <h2 for="weight" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-lobster">What's your weight?</h2>
+                    <h2 for="weight" style="text-shadow:1px 1px 0 #444" class="w3-wide w3-text-cyan w3-lobster">What's your weight?</h2>
                     <select id="dropdown-weight" class="dropdown-weight" name="weight"><option></option>
                     </select>
                         <br>
-                    <h2 for="height" style="text-shadow:1px 1px 0 #444" class="w3-text-cyan w3-lobster">What's your height?</h2>
+                    <h2 for="height" style="text-shadow:1px 1px 0 #444" class="w3-wide w3-text-cyan w3-lobster">What's your height?</h2>
                     <select id="dropdown-height" class="dropdown-height" name="height"><option></option>
                     </select>
                         <br>
                     
-                <div id="bmiTitle" class="card-body bmiTitle"></div>
+                <div id="bmiTitle" class="card-body bmiTitle w3-text-cyan"></div>
                     <!-- <h1 class=bmiTitle>Your Results:</h1> -->
-                    <div id="BMI"></div>
+                    <div class="w3-text-cyan" class="" id="BMI"></div>
                         <br></br>
-                    <div id="health"></div>
+                    <div class="w3-text-cyan" id="health"></div>
                         <br></br>
-                    <div id="range"><div>
+                    <div class="w3-text-cyan" id="range"><div>
             </div>
             <button id="bmiSubmit" class="w3-button w3-block w3-wide w3-text-cyan w3-hover-cyan submitBtn" type="submit" value="Submit">Submit</button>
     </div>
     <div class="w3-container w3-content w3-center">
         <div class=" w3-container w3-content form2">
         <h1 class="w3-jumbo w3-hide-small w3-text-cyan">Random Recipe Generator</h1>
-            <h2 class="w3-text-cyan"for="">What type of food do you like?</h2>
+            <h2 class="w3-text-cyan w3-wide"for="">What type of food do you like?</h2>
             <select id="dropdown-recipe" class="dropdown-=" name="="><option></option>
                 <option value="chicken">Chicken</option>
                 <option value="fish">Fish</option>
@@ -117,14 +113,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Nunito", sans-serif;}
                 <option value="dinner">Dinner</option>
             </select>
             <div id="recipeOutput" class="w3-text-cyan">
-                <h1 id="foodTitle"></h1>
+                <h1 class="w3-text-cyan" class="w3-text-cyan" id="foodTitle"></h1>
                     <a id="anchor">
                         <img id="imgSrc"></img>
                     </a>
-                <h1 id="underPic"></h1>
-                    <h3 id="desc"></h3>
-                <h1 id="healthText"></h1>
-                    <h3 id="healthDesc"></h3>
+                <h1 class="w3-text-cyan" id="underPic"></h1>
+                    <h3 class="w3-text-cyan" id="desc"></h3>
+                <h1 class="w3-text-cyan" id="healthText"></h1>
+                    <h3 class="w3-text-cyan" id="healthDesc"></h3>
                 </div>
                 <button id="recipeSubmit" class="w3-button w3-block w3-wide w3-text-cyan w3-hover-cyan submitBtn" type="submit" value="Search">Search</button>
                 </div>    
